@@ -1,0 +1,21 @@
+export function readQueryWithParams(query: string, params: any[]): string {
+  const paramsHashTable: Record<string, any> = {};
+  let modifiedQuery: string = query;
+
+  for (let i = 0; i < params.length; i++) {
+    if (params[i] === null) params[i] = "null";
+    else if (typeof params[i] === "string") params[i] = `'${params[i]}'`;
+    else if (params[i].length) {
+      params[i] = `'{${params[i]}}'`;
+    }
+
+    paramsHashTable[`$${i + 1}`] = params[i];
+  }
+
+  for (const paramKey in paramsHashTable) {
+    console.log(paramsHashTable[paramKey]);
+    modifiedQuery = modifiedQuery.replaceAll(paramKey, paramsHashTable[paramKey]);
+  }
+
+  return modifiedQuery;
+}

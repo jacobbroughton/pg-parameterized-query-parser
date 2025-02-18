@@ -1,0 +1,23 @@
+{
+  "name": "pg-parameterized-query-parser",
+  "version": "1.0.0",
+  "description": "Module for printing/logging query with values instead of $1, $2, $3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobbroughton/pg-parameterized-query-parser.git"
+  },
+  "author": "Jacob Broughton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacobbroughton/pg-parameterized-query-parser/issues"
+  },
+  "homepage": "https://github.com/jacobbroughton/pg-parameterized-query-parser#readme",
+  "devDependencies": {
+    "@types/node": "^22.13.4"
+  }
+}
