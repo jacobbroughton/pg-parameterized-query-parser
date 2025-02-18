@@ -1,6 +1,10 @@
 export function readQueryWithParams(query: string, params: any[]): string {
   const paramsHashTable: Record<string, any> = {};
-  let modifiedQuery: string = query;
+
+  if (typeof query !== "string") throw new Error("`query` must be a string");
+  if (params.constructor !== Array) throw new Error("`params` must be an array");
+
+  let modifiedQuery: string = query || "";
 
   for (let i = 0; i < params.length; i++) {
     if (params[i] === null) params[i] = "null";
