@@ -13,7 +13,6 @@ export function readQueryWithParams(query: string, params: any[]): string {
   }
 
   for (const paramKey in paramsHashTable) {
-    console.log(paramsHashTable[paramKey]);
     modifiedQuery = modifiedQuery.replaceAll(paramKey, paramsHashTable[paramKey]);
   }
 
